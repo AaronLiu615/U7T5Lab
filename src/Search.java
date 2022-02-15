@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Search {
@@ -7,6 +8,16 @@ public class Search {
     // should be accepted as parameters); return -1 if target is not found
     // BE SURE TO USE EARLY RETURN (more efficient)
 
+    public static int linearSearch(int[] list, int target){
+        for (int i = 0; i < list.length; i++){
+            if (list[i] == target)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
 
 
@@ -15,7 +26,15 @@ public class Search {
     // instead of returning an index, it returns true if target is found or false
     // if target is not found
     // AGAIN, BE SURE TO USE EARLY RETURN
-
+    public static boolean Search(int[] list, int target){
+        for (int i = 0; i < list.length; i++){
+            if (list[i] == target)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 
@@ -24,7 +43,15 @@ public class Search {
     // of Integers (rather than an array of ints) and a target int; return the first index
     // at which the target is found, or return -1 if target is not found
     // BE SURE TO USE EARLY RETURN
-
+    public static int linearSearch(ArrayList<Integer> list, int target){
+        for (int i = 0; i < list.size(); i++){
+            if (list.get(i) == target)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
 
 
 
@@ -33,7 +60,15 @@ public class Search {
     // of Strings and a target String; return the first index at which the target is found,
     // or return -1 if target is not found
     // BE SURE TO USE EARLY RETURN
-
+    public static int linearSearch(String[] list, String target){
+        for (int i = 0; i < list.length; i++){
+            if (list[i].equals(target))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
 
 
 
@@ -42,7 +77,19 @@ public class Search {
     // target int, and return the LAST index at which the target is found,
     // or return -1 if target is not found
 
+    public static int linearSearchLast(int[] list, int target){
 
+        int index = 0;
+        int current = -1;
+
+        while (index < list.length){
+            if (list[index] == target){
+                current = index;
+            }
+            index++;
+        }
+        return current;
+    }
 
 
 
@@ -51,7 +98,25 @@ public class Search {
     // of Integers and a target int.  Each method should return the NUMBER OF TIMES
     // the target appears in the array/ArrayList.
 
+    public static int linearSearchCount(int[] list, int target){
+        int count = 0;
+        for (int i = 0; i < list.length; i++){
+            if (list[i] == target){
+                count++;
+            }
+        }
+        return count;
+    }
 
+    public static int linearSearchCount(ArrayList<Integer> list, int target){
+        int count = 0;
+        for (int i = 0; i < list.size(); i++){
+            if (list.get(i) == target){
+                count++;
+            }
+        }
+        return count;
+    }
 
 
 }
